@@ -30,7 +30,7 @@ jobs:
         sudo swapoff -a
         sudo rm -f /swapfile
         sudo apt clean
-        docker rmi $(docker images -a -q)
+        docker images -a -q
         df -h
     - uses: actions/checkout@v4
       with:
