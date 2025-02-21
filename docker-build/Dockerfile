@@ -8,5 +8,5 @@ RUN apt-get -qq -y update && \
 #    update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5 && \
 #    echo 1 | update-alternatives --config gcc
 RUN git clone --recursive https://github.com/tianocore/edk2.git
-RUN git clone --recurse-submodules https://github.com/tianocore/edk2.git
+RUN git submodule update --init --recursive
 COPY files/ /ovmf
